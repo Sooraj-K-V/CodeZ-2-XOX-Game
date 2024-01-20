@@ -1,0 +1,114 @@
+.third-div {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+}
+
+.third-div:hover {
+    width: 270px;
+    height: 265px;
+    background-color: rgb(217, 255, 0);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+}
+
+.third-div button {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    width: 80px;
+    font-size: 60px;
+    text-align: center;
+    margin: 1px;
+    border-style: solid;
+    border-color: rgb(64, 0, 255);
+}
+
+.third-div button:hover {
+    height: 80px;
+    width: 80px;
+    font-size: 60px;
+    text-align: center;
+    margin: 1px;
+    transition: 0.1s;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    background-color: rgb(212, 208, 208);
+}
+
+.third-div button:active {
+    height: 80px;
+    width: 80px;
+    font-size: 60px;
+    text-align: center;
+    margin: 1px;
+    border-radius: 30px;
+}
+
+.second-div {
+    text-align: center;
+}
+
+h1 {
+    border-style: solid;
+    width: 100px;
+    margin-left: 29%;
+    color: rgb(0, 0, 0);
+    background-color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#restart-button {
+    background-color: rgb(222, 255, 7);
+    margin: 0px;
+    border-style: none;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+#restart-button:hover {
+    background-color: rgb(0, 255, 34);
+    margin: 0px;
+    border-style: none;
+    border-radius: 20px;
+    width: 70px;
+    height: 20px;
+    transition: 2s;
+}
+
+#restart-button:active {
+    background-color: rgb(238, 255, 7);
+    margin: 0px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 20px;
+    width: 70px;
+    height: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(200, 0, 197);
+}
+#result{
+    background-color: yellow;
+    width: 100px;
+    margin: 30%;
+}

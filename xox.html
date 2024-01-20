@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xox game</title>
+    <link rel="stylesheet" href="xox.css">
+</head>
+
+<body>
+    <script type="text/javascript" src="xox.js"></script>
+    <div class="first-div">
+        <div class="second-div">
+            <h1>XOX</h1>
+            <div class="third-div">
+                <button id="myButton1" onclick="checkChance(this)"></button>
+                <button id="myButton2" onclick="checkChance(this)"></button>
+                <button id="myButton3" onclick="checkChance(this)"></button>
+                <button id="myButton4" onclick="checkChance(this)"></button>
+                <button id="myButton5" onclick="checkChance(this)"></button>
+                <button id="myButton6" onclick="checkChance(this)"></button>
+                <button id="myButton7" onclick="checkChance(this)"></button>
+                <button id="myButton8" onclick="checkChance(this)"></button>
+                <button id="myButton9" onclick="checkChance(this)"></button>
+            </div>
+            <h2 id="result">RESULT</h2>
+            <button id="restart-button" onclick="restartGame()">restart</button>
+        </div>
+    </div>
+</body>
+<script>
+    var buttonName1 = document.getElementById("myButton1")
+    var buttonName2 = document.getElementById("myButton2")
+    var buttonName3 = document.getElementById("myButton3")
+    var buttonName4 = document.getElementById("myButton4")
+    var buttonName5 = document.getElementById("myButton5")
+    var buttonName6 = document.getElementById("myButton6")
+    var buttonName7 = document.getElementById("myButton7")
+    var buttonName8 = document.getElementById("myButton8")
+    var buttonName9 = document.getElementById("myButton9")
+
+    
+    var res = document.getElementById("result")
+    var count = 0
+
+    function restartGame()
+    {
+        buttonName1.innerHTML = null
+        buttonName2.innerHTML = null
+        buttonName3.innerHTML = null
+        buttonName4.innerHTML = null
+        buttonName5.innerHTML = null
+        buttonName6.innerHTML = null
+        buttonName7.innerHTML = null
+        buttonName8.innerHTML = null
+        buttonName9.innerHTML = null
+        count = 0
+        res.textContent = "Result";
+    }
+
+    function getButtonId(button) {
+        var buttonId = button.id;
+        console.log("Button ID: " + buttonId);
+    }
+
+    function checkChance(button) {
+        var n = userChanceCount();
+        var but_id = button.id;
+        if (n % 2 == 0) {
+            changeTo_O(but_id);
+        } else {
+            changeTo_X(but_id);
+        }
+        console.log(buttonName1.innerHTML)
+        if (
+            (buttonName1.innerHTML === 'X' && buttonName2.innerHTML === 'X' && buttonName3.innerHTML === 'X') ||
+            (buttonName4.innerHTML === 'X' && buttonName5.innerHTML === 'X' && buttonName6.innerHTML === 'X') ||
+            (buttonName7.innerHTML === 'X' && buttonName8.innerHTML === 'X' && buttonName9.innerHTML === 'X') ||
+            (buttonName1.innerHTML === 'X' && buttonName4.innerHTML === 'X' && buttonName7.innerHTML === 'X') ||
+            (buttonName2.innerHTML === 'X' && buttonName5.innerHTML === 'X' && buttonName8.innerHTML === 'X') ||
+            (buttonName3.innerHTML === 'X' && buttonName6.innerHTML === 'X' && buttonName9.innerHTML === 'X') ||
+            (buttonName1.innerHTML === 'X' && buttonName5.innerHTML === 'X' && buttonName9.innerHTML === 'X') ||
+            (buttonName3.innerHTML === 'X' && buttonName5.innerHTML === 'X' && buttonName7.innerHTML === 'X')
+        ) {
+            console.log("X won");
+            res.textContent = "X won the game!";
+        } else if (
+            (buttonName1.innerHTML === 'O' && buttonName2.innerHTML === 'O' && buttonName3.innerHTML === 'O') ||
+            (buttonName4.innerHTML === 'O' && buttonName5.innerHTML === 'O' && buttonName6.innerHTML === 'O') ||
+            (buttonName7.innerHTML === 'O' && buttonName8.innerHTML === 'O' && buttonName9.innerHTML === 'O') ||
+            (buttonName1.innerHTML === 'O' && buttonName4.innerHTML === 'O' && buttonName7.innerHTML === 'O') ||
+            (buttonName2.innerHTML === 'O' && buttonName5.innerHTML === 'O' && buttonName8.innerHTML === 'O') ||
+            (buttonName3.innerHTML === 'O' && buttonName6.innerHTML === 'O' && buttonName9.innerHTML === 'O') ||
+            (buttonName1.innerHTML === 'O' && buttonName5.innerHTML === 'O' && buttonName9.innerHTML === 'O') ||
+            (buttonName3.innerHTML === 'O' && buttonName5.innerHTML === 'O' && buttonName7.innerHTML === 'O')
+        ) {
+            console.log("O won");
+            res.textContent = "O won the game!";
+        }
+    }
+
+    function userChanceCount() {
+        var one = 1
+        count = count + 1
+        console.log(count)
+        return count
+    }
+
+    function changeTo_X(bid) {
+        var button = document.getElementById(bid);
+        button.innerHTML = "X";
+    }
+
+    function changeTo_O(bid) {
+        var button = document.getElementById(bid);
+        button.innerHTML = "O";
+    }
+
+</script>
+
+</html>
