@@ -64,7 +64,17 @@
         console.log("Button ID: " + buttonId);
     }
 
+    function ifValueExist(button)
+    {
+        if(button.innerHTML=='X' || button.innerHTML=='O')
+        {
+            console.log("cell occupied")
+            count--
+        }
+    }
+
     function checkChance(button) {
+        ifValueExist(button)
         var n = userChanceCount();
         var but_id = button.id;
         if (n % 2 == 0) {
